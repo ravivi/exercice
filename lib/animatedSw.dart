@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class AnimatedSw extends StatefulWidget {
     final String title;
@@ -22,7 +23,9 @@ Widget myAnimation =Container(key:ValueKey(1) ,child: Image.asset('images/belle.
          actions: <Widget>[
           IconButton(
             icon: Icon(Icons.share),
-            onPressed: (){},
+            onPressed: (){
+              launchUrl();
+            },
           )
         ],
       ),
@@ -66,4 +69,7 @@ Widget myAnimation =Container(key:ValueKey(1) ,child: Image.asset('images/belle.
       ),
     );
   }
+     void launchUrl(){
+  launch('https://github.com/ravivi/exercice/blob/master/lib/animatedSw.dart');
+}
 }

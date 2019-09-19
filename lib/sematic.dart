@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'package:url_launcher/url_launcher.dart';
 
 
 
@@ -24,7 +24,7 @@ class SematiExState extends State<SematiEx> {
           IconButton(
             icon: Icon(Icons.share),
             onPressed: (){
-            
+            launchUrl();
             },
           )
         ],
@@ -51,4 +51,7 @@ class SematiExState extends State<SematiEx> {
       ),
     );
   }
+   void launchUrl(){
+  launch('https://github.com/ravivi/exercice/blob/master/lib/sematic.dart');
+}
 }

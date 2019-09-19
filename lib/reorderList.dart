@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class ReorderList extends StatefulWidget {
   final String title;
@@ -19,16 +20,6 @@ class ReorderListState extends State<ReorderList> {
 
 
   ];
-   final List<String>myListImage=[
-    'Parrainzo',
-    'Geoffroy',
-    'Marc-Henry',
-    'Florentin',
-    'Dao',
-    'Zongo',
-
-
-  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -39,7 +30,9 @@ class ReorderListState extends State<ReorderList> {
          actions: <Widget>[
           IconButton(
             icon: Icon(Icons.share),
-            onPressed: (){},
+            onPressed: (){
+              launchUrl();
+            },
           )
         ],
       ),
@@ -51,7 +44,7 @@ class ReorderListState extends State<ReorderList> {
               child: Card(
                 child: ListTile(
               leading: 
-                Icon(Icons.contact_phone),
+                Icon(Icons.account_circle),
                 //backgroundColor: Colors.blueGrey,
               
               title: Text(item),
@@ -80,4 +73,7 @@ class ReorderListState extends State<ReorderList> {
       ),
     );
   }
+   void launchUrl(){
+  launch('https://github.com/ravivi/exercice/blob/master/lib/reorderList.dart');
+}
 }

@@ -31,7 +31,7 @@ class AnimatedPadiState extends State<AnimatedPadi> {
           IconButton(
             icon: Icon(Icons.share),
             onPressed:(){
-              _launchURL;
+              launchUrl();
             } 
           ),
         ],
@@ -43,7 +43,7 @@ child: Center(
         children: <Widget>[
            Container(
              margin: EdgeInsets.only(top: 20),
-             child: Text("Click sur un carré et tu verras l'animation", style: TextStyle(fontStyle: FontStyle.italic, fontSize: 20), textAlign: TextAlign.center,),
+             child: Text("Clique sur ce rectangle, il sera un carré", style: TextStyle(fontStyle: FontStyle.italic, fontSize: 20), textAlign: TextAlign.center,),
          
 
            ), 
@@ -75,12 +75,7 @@ child: Center(
       ),
         );
   }
+  void launchUrl(){
+  launch('https://github.com/ravivi/exercice/blob/master/lib/animationPaddi.dart');
 }
-_launchURL() async {
-  const url = 'https://flutter.dev';
-  if (await canLaunch(url)) {
-    await launch(url);
-  } else {
-    throw 'Could not launch $url';
-  }
 }

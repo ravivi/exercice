@@ -11,6 +11,9 @@ import './reorderList.dart';
 import './sematic.dart';
 import './aspect.dart';
 import './stack.dart';
+import './place.dart';
+import './drag.dart';
+import './rich.dart';
 
 
 
@@ -30,9 +33,13 @@ class CompleteExerciceState extends State<CompleteExercice> {
     StackEx(title: 'Stack',),
     IndexStack(title: 'IndexedStack'),
     Aspect(title: 'AspectRatio',),
+    Drag(title:'Draggable'),
     MediaQ(title: 'MediaQuery',),
+    Place(title: 'Placeholder'),
     ReorderList(title: 'ReorderableListView',),
-    SematiEx(title: 'Sementics',)
+    Rich(title: 'RichText'),
+    SematiEx(title: 'Sementics',),
+
 
 
   ];
@@ -47,13 +54,13 @@ class CompleteExerciceState extends State<CompleteExercice> {
      'IndexedStack',
      'AspectRatio',
     // 'ConstrainedBox',
-     //'Draggable',
+     'Draggable',
     // 'InheritedWidget',
     // 'LimitedBox',
      'MediaQuery',
-    // 'Placeholder',
+     'Placeholder',
      'ReorderableListView',
-    // 'RichText',
+    'RichText',
      'Semantics',
     // 'Spacer',
 

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class AnimatedPosi extends StatefulWidget {
     final String title;
@@ -29,7 +30,9 @@ class AnimatedPosiState extends State<AnimatedPosi> {
          actions: <Widget>[
           IconButton(
             icon: Icon(Icons.share),
-            onPressed: (){},
+            onPressed: (){
+              launchUrl();
+            },
           )
         ],
       ),
@@ -102,4 +105,7 @@ class AnimatedPosiState extends State<AnimatedPosi> {
       ),
     );
   }
+     void launchUrl(){
+  launch('https://github.com/ravivi/exercice/blob/master/lib/animatedPosi.dart');
+}
 }

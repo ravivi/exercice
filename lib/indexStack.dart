@@ -1,9 +1,5 @@
 import 'package:flutter/material.dart';
-import './animationIcon.dart';
-import './animatedPosi.dart';
-import './animationListe.dart';
-import './animationOpacity.dart';
-import './animationPaddi.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class IndexStack extends StatefulWidget {
     final String title;
@@ -34,7 +30,9 @@ class IndexStackState extends State<IndexStack> {
          actions: <Widget>[
           IconButton(
             icon: Icon(Icons.share),
-            onPressed: (){},
+            onPressed: (){
+              launchUrl();
+            },
           )
         ],
       ),
@@ -82,4 +80,7 @@ class IndexStackState extends State<IndexStack> {
         ),
     );
   }
+    void launchUrl(){
+  launch('https://github.com/ravivi/exercice/blob/master/lib/indexStack.dart');
+}
 }

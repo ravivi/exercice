@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'package:url_launcher/url_launcher.dart';
 
 
 class MyHomePage extends StatefulWidget {
@@ -39,7 +39,9 @@ class MyHomePage extends StatefulWidget {
         actions: <Widget>[
           IconButton(
             icon: Icon(Icons.share),
-            onPressed: (){},
+            onPressed: (){
+              launchUrl();
+            },
           )
         ],
       ),
@@ -70,4 +72,7 @@ class MyHomePage extends StatefulWidget {
      :_animationController.reverse(); 
     });
   }
+   void launchUrl(){
+  launch('https://github.com/ravivi/exercice/blob/master/lib/animationIcon.dart');
+}
 }

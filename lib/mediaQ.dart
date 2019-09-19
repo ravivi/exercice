@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'package:url_launcher/url_launcher.dart';
 
 class MediaQ extends StatefulWidget {
     final String title;
@@ -29,7 +29,9 @@ class MediaQState extends State<MediaQ> {
          actions: <Widget>[
           IconButton(
             icon: Icon(Icons.share),
-            onPressed: (){},
+            onPressed: (){
+              launchUrl();
+            },
           )
         ],
       ),
@@ -38,6 +40,9 @@ class MediaQState extends State<MediaQ> {
             :secondWidget(context),
     );
   }
+    void launchUrl(){
+  launch('https://github.com/ravivi/exercice/blob/master/lib/mediaQ.dart');
+}
 }
 Widget firstWidget(BuildContext context){
   return Center(
@@ -143,4 +148,5 @@ Widget secondWidget(BuildContext context){
       ],
     ),
   );
+ 
 }

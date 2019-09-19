@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class AnimatedOpa extends StatefulWidget {
   final String title;
@@ -29,7 +30,9 @@ class AnimatedOpaState extends State<AnimatedOpa> {
          actions: <Widget>[
           IconButton(
             icon: Icon(Icons.share),
-            onPressed: (){},
+            onPressed: (){
+              launchUrl();
+            },
           )
         ],
       ),
@@ -79,4 +82,7 @@ class AnimatedOpaState extends State<AnimatedOpa> {
       ),
     );
   }
+    void launchUrl(){
+  launch('https://github.com/ravivi/exercice/blob/master/lib/animationOpacity.dart');
+}
 }
