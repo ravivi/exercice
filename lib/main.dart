@@ -1,14 +1,6 @@
 import 'package:flutter/material.dart';
-import './detail.dart';
-import './home.dart';
-import './animationIcon.dart';
-import './animationListe.dart';
-import './limitBox.dart';
 import './complete.dart';
-import './animationOpacity.dart';
-import './animationPaddi.dart';
-import './animatedPosi.dart';
-import './indexStack.dart';
+
 
 void main() => runApp(MyApp());
 
