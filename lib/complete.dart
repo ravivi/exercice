@@ -19,6 +19,9 @@ import './animatedContainer.dart';
 import './pageV.dart';
 import './abord.dart';
 import './dismiss.dart';
+import './backdrop.dart';
+import './silv.dart';
+import './slivList.dart';
 
 
 class CompleteExercice extends StatefulWidget {
@@ -58,6 +61,10 @@ class CompleteExerciceState extends State<CompleteExercice> {
     ),
     PageAbord(title: 'AbsordPointer',),
     PageDismis(title: 'Dismissible',),
+    PageBack(title: 'BackDropFilter',),
+    PageSilv(title: 'SliverAppBar',),
+    PageSilvList(title: 'SilverList',),
+
 
   ];
   List<String> myWidgetList = [
@@ -82,7 +89,11 @@ class CompleteExerciceState extends State<CompleteExercice> {
     'RichText',
     'Semantics',
     'AbsordPointer',
-    'Dismissible'
+    'Dismissible',
+    'BackDropFilter',
+    'SliverAppBar',
+    'SliverList',
+
   ];
   List<String> myClasses = [
     'home',
