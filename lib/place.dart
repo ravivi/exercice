@@ -45,6 +45,6 @@ class PlaceState extends State<Place> {
     );
   }
     void launchUrl(){
-  launch('https://github.com/ravivi/exercice/blob/master/lib/Place.dart');
+  launch('https://github.com/ravivi/exercice/blob/master/lib/place.dart');
 }
 }

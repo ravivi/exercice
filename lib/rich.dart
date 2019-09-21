@@ -89,6 +89,6 @@ Padding(
     );
   }
    void launchUrl(){
-  launch('https://github.com/ravivi/exercice/blob/master/lib/Rich.dart');
+  launch('https://github.com/ravivi/exercice/blob/master/lib/rich.dart');
 }
 }

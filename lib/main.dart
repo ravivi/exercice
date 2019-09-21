@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import './complete.dart';
+import './new.dart';
+import './connexion.dart';
+import './richText.dart';
 
 
 void main() => runApp(MyApp());
