@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
+
+import './animatedBuil.dart';
 import './animationIcon.dart';
 import './animatedPosi.dart';
 import './animationListe.dart';
@@ -17,12 +20,17 @@ import './rich.dart';
 import './heroEx.dart';
 import './animatedContainer.dart';
 import './pageV.dart';
-import './abord.dart';
+import './toolT.dart';
 import './dismiss.dart';
 import './backdrop.dart';
 import './silv.dart';
 import './slivList.dart';
-
+import './wrapEx.dart';
+import './fadeI.dart';
+import './tab.dart';
+import './siz.dart';
+import './fitt.dart';
+import './stream.dart';
 
 class CompleteExercice extends StatefulWidget {
   @override
@@ -31,13 +39,14 @@ class CompleteExercice extends StatefulWidget {
 
 class CompleteExerciceState extends State<CompleteExercice> {
   List<Widget> myPageChange = [
+    AnimatedBuil(title: 'AnimatedBuilder'),
     MyHomePage(title: 'AnimatedIcon'),
     HomePage(title: 'AnimatedList'),
     AnimatedOpa(title: 'AnimatedOpacity'),
     AnimatedPadi(title: 'AnimatedPadding'),
     AnimatedPosi(title: 'AnimatedPositioned'),
     AnimatedSw(title: 'AnimatedSwitcher'),
-    Page(title:'AnimatedContainer'),
+    Page(title: 'AnimatedContainer'),
     StackEx(
       title: 'Stack',
     ),
@@ -45,7 +54,9 @@ class CompleteExerciceState extends State<CompleteExercice> {
     Aspect(
       title: 'AspectRatio',
     ),
-    PageEx(title: 'PageView',),
+    PageEx(
+      title: 'PageView',
+    ),
     Drag(title: 'Draggable'),
     HeroEx(title: 'Hero'),
     MediaQ(
@@ -59,15 +70,34 @@ class CompleteExerciceState extends State<CompleteExercice> {
     SematiEx(
       title: 'Sementics',
     ),
-    PageAbord(title: 'AbsordPointer',),
-    PageDismis(title: 'Dismissible',),
-    PageBack(title: 'BackDropFilter',),
-    PageSilv(title: 'SliverAppBar',),
-    PageSilvList(title: 'SilverList',),
-
-
+    PageAbord(
+      title: 'ToolTip',
+    ),
+    PageDismis(
+      title: 'Dismissible',
+    ),
+    PageBack(
+      title: 'BackDropFilter',
+    ),
+    PageSilv(
+      title: 'SliverAppBar',
+    ),
+    PageSilvList(
+      title: 'SilverList',
+    ),
+    PageWrap(
+      title: 'Wrap',
+    ),
+    PageFadI(
+      title: 'FadeInImage',
+    ),
+    PageTab(title: 'Table',),
+    PageSiz(title: 'SizeBox',),
+    PageFit(title: 'FittedBox',),
+    PageStream(title: 'StreamBuilder',),
   ];
   List<String> myWidgetList = [
+    'AnimatedBuilder',
     'AnimatedIcon',
     'AnimatedList',
     'AnimatedOpacity',
@@ -88,12 +118,17 @@ class CompleteExerciceState extends State<CompleteExercice> {
     'ReorderableListView',
     'RichText',
     'Semantics',
-    'AbsordPointer',
+    'Tooltip',
     'Dismissible',
     'BackDropFilter',
     'SliverAppBar',
-    'SliverList',
-
+    'SliverList & SliverGrid',
+    'Wrap',
+    'FadeInImage',
+    'Table',
+    'SizeBox',
+    'FittedBox',
+    'StreamBuilder',
   ];
   List<String> myClasses = [
     'home',
@@ -107,33 +142,55 @@ class CompleteExerciceState extends State<CompleteExercice> {
         title: Text('Exercice complet'),
         centerTitle: true,
         backgroundColor: Colors.grey,
-        actions: <Widget>[
-          Padding(
-            padding: EdgeInsets.all(12),
-            child:   Icon(Icons.more_vert),
+        leading: Container(
+            padding: EdgeInsets.only(top: 10, bottom: 10, right: 20, left: 10),
+            height: 5,
+            child: GestureDetector(
+              onTap: launchUrl3,
+              child: CircleAvatar(
+                backgroundImage: AssetImage('images/nan.jpg'),
+              ),
+            ),
           ),
-        
+        actions: <Widget>[
+          Container(
+            padding: EdgeInsets.only(top: 10, bottom: 10, right: 20, left: 10),
+            height: 5,
+            child: GestureDetector(
+              onTap: showModalSheet,
+              child: CircleAvatar(
+                backgroundImage: AssetImage('images/auteur.jpg'),
+              ),
+            ),
+          ),
         ],
       ),
-       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       floatingActionButton: FloatingActionButton(
-          backgroundColor: Colors.blueAccent,
-          onPressed: (){},
-          child: Icon(Icons.code),),
-     bottomNavigationBar: BottomNavigationBar(
-       elevation: 0,
-           //backgroundColor: Colors.grey,
-           selectedItemColor: Colors.blueAccent,
-           items: <BottomNavigationBarItem>[
-             BottomNavigationBarItem(icon: Icon(Icons.home,),title: Text('Accueil') ),
-        
-             BottomNavigationBarItem(icon: Icon(Icons.star_border,), title: Text('Favoris') ),
-           
-           ],
-           //currentIndex: _pageindex,
-           type: BottomNavigationBarType.fixed,
-           //onTap: onItemTapped,
-             ),
+        backgroundColor: Colors.blueAccent,
+        onPressed: () {},
+        child: Icon(Icons.code),
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+        elevation: 0,
+        //backgroundColor: Colors.grey,
+        selectedItemColor: Colors.blueAccent,
+        items: <BottomNavigationBarItem>[
+          BottomNavigationBarItem(
+              icon: Icon(
+                Icons.home,
+              ),
+              title: Text('Accueil')),
+          BottomNavigationBarItem(
+              icon: Icon(
+                Icons.star_border,
+              ),
+              title: Text('Favoris')),
+        ],
+        //currentIndex: _pageindex,
+        type: BottomNavigationBarType.fixed,
+        //onTap: onItemTapped,
+      ),
       backgroundColor: Colors.grey,
       body: ListView.builder(
         //   padding: EdgeInsets.all(16),
@@ -148,7 +205,7 @@ class CompleteExerciceState extends State<CompleteExercice> {
               //   left: 40,
               //   child:
               Container(
-                  margin: EdgeInsets.only(right: 20,left: 30),
+                  margin: EdgeInsets.only(right: 20, left: 30),
                   width: 400,
                   height: 70,
                   color: Colors.white,
@@ -158,28 +215,36 @@ class CompleteExerciceState extends State<CompleteExercice> {
                     children: <Widget>[
                       Container(
                         padding: EdgeInsets.only(left: 60),
-                       child: Text(
-                        myWidgetList[i],
-                        style: TextStyle(
-                          color: Colors.black,
+                        child: Text(
+                          myWidgetList[i],
+                          style: TextStyle(
+                            color: Colors.black,
+                          ),
+                          textAlign: TextAlign.center,
                         ),
-                        textAlign: TextAlign.center,
                       ),
 
-                      ),
-                      
                       Spacer(
                         flex: 1,
                       ),
                       IconButton(
                         icon: Icon(
                           Icons.visibility,
-                          color: Colors.black,
+                          color: Colors.grey,
                         ),
                         onPressed: () {
                           toNew(myPageChange[i]);
                         },
                       ),
+                      // IconButton(
+                      //   icon: Icon(
+                      //     Icons.info_outline,
+                      //     color: Colors.grey,
+                      //   ),
+                      //   onPressed: () {
+                      //     toNew(myPageChange[i]);
+                      //   },
+                      // ),
                     ],
                   )),
               //),
@@ -226,6 +291,129 @@ class CompleteExerciceState extends State<CompleteExercice> {
         },
       ),
     );
+  }
+
+  void showModalSheet() {
+    showModalBottomSheet(
+        context: context,
+        builder: (builder) {
+          return Container(
+            height: 200,
+            child:Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                Container(
+                  child: CircleAvatar(
+                    backgroundImage: AssetImage('images/auteur.jpg'),
+                  ),
+                ),
+
+                Container(
+                  margin: EdgeInsets.only(left: 10),
+                  child: Text(
+                    "Octave N'dry",
+                    style: TextStyle(fontSize: 18,
+                      color: Colors.black,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ),
+                
+              ],
+            ),
+            GestureDetector(
+                  onTap: launchUrl,
+                  child: Container(
+                    margin:
+                        EdgeInsets.only(left: 12, right: 12, top: 2, bottom: 2),
+                    child: Chip(
+                      avatar: CircleAvatar(
+                        backgroundImage: AssetImage('images/git.png'),
+                        backgroundColor: Colors.white,
+                      ),
+                      label: Text(
+                        'Github',
+                        style: TextStyle(
+                          color: Colors.black,
+                        ),
+                      ),
+                      backgroundColor: Colors.white,
+                      elevation: 4,
+                      shadowColor: Colors.grey[40],
+                      padding: EdgeInsets.all(4),
+                    ),
+                  ),
+                ),
+                
+            GestureDetector(
+                  onTap: (){
+                    launchUrl2('jeremiedry@gmail.com', "Question sur Exercice complet", 'Bonjour Octave');
+                  },
+                  child: Container(
+                    margin:
+                        EdgeInsets.only(left: 12, right: 12, top: 2, bottom: 2),
+                    child: Chip(
+                      avatar: CircleAvatar(
+                        backgroundImage: AssetImage('images/gmail.png'),
+                        backgroundColor: Colors.white,
+                      ),
+                      label: Text(
+                        'Email',
+                        style: TextStyle(
+                          color: Colors.white,
+                        ),
+                      ),
+                      backgroundColor: Colors.red,
+                      elevation: 4,
+                      shadowColor: Colors.grey[40],
+                      padding: EdgeInsets.all(4),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+            //padding: EdgeInsets.all(40.0),
+          );
+        });
+  }
+//   void showAlertDialog(BuildContext context) {
+  
+//   Widget cancelButton = FlatButton(
+//     child: Text("Ok"),
+//     onPressed:  () {
+//       Navigator.of(context).pop(); // dismiss dialog
+   
+//     },
+//   );
+//   // set up the AlertDialog
+//   AlertDialog alert = AlertDialog(
+//     title: Text(" A retenir"),
+//     content: Text(""),
+//     actions: [
+//       cancelButton,
+//     ],
+//   );
+//   // show the dialog
+//   showDialog(
+//     context: context,
+//     builder: (BuildContext context) {
+//       return alert;
+//     },
+//   );
+// }
+
+  void launchUrl() {
+    launch('https://github.com/ravivi/exercice');
+  }
+  void launchUrl3() {
+    launch('https://cursus.nan.ci/');
+  }
+   void launchUrl2(String toMailId, String subject, String body) {
+     var url = 'mailto:$toMailId?subject=$subject&body=$body';
+    launch(url);
   }
 
   void toNew(Widget wid) {

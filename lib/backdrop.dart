@@ -35,7 +35,7 @@ PageBack({Key key, this.title}): super(key:key);
           )
         ],
       ),
-      body: Column(
+      body: SingleChildScrollView( child: Column(
         children: <Widget>[
           Stack(
             children: <Widget>[
@@ -73,6 +73,7 @@ PageBack({Key key, this.title}): super(key:key);
           )
         ],
       ),
+      )
      
 
     );
