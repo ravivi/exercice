@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 import 'dart:math';
 
 
@@ -62,6 +63,14 @@ void _handleOnPressed() {
       appBar: AppBar(
         title: Text(widget.title),
         centerTitle: true,
+         actions: <Widget>[
+          IconButton(
+            icon: Icon(Icons.share),
+            onPressed: () {
+              launchUrl();
+            },
+          )
+        ],
       ),
       body: Stack(
         alignment: Alignment.center,
@@ -96,6 +105,8 @@ void _handleOnPressed() {
     );
 
   }
-
+   void launchUrl(){
+  launch('https://github.com/ravivi/exercice/blob/master/lib/AnimatedContainer.dart');
+}
 
 }

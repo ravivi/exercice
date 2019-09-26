@@ -43,9 +43,7 @@ bool isAbord = true;
 Widget buttonDesign(String label, Color color){
   return Container(
     margin: EdgeInsets.only(left: 12, right: 12, top: 2, bottom: 2),
-    child: Chip(avatar: CircleAvatar(
-      backgroundImage: AssetImage('images/auteur.jpg'),
-    ),
+    child: Chip(
       label: Text(
         label,
         style: TextStyle(

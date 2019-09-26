@@ -31,6 +31,11 @@ import './tab.dart';
 import './siz.dart';
 import './fitt.dart';
 import './stream.dart';
+import './space.dart';
+import 'ali.dart';
+import './opacit.dart';
+import './posi.dart';
+import './exp.dart';
 
 class CompleteExercice extends StatefulWidget {
   @override
@@ -39,6 +44,7 @@ class CompleteExercice extends StatefulWidget {
 
 class CompleteExerciceState extends State<CompleteExercice> {
   List<Widget> myPageChange = [
+    PageAlign(title: 'Align',),
     AnimatedBuil(title: 'AnimatedBuilder'),
     MyHomePage(title: 'AnimatedIcon'),
     HomePage(title: 'AnimatedList'),
@@ -50,6 +56,7 @@ class CompleteExerciceState extends State<CompleteExercice> {
     StackEx(
       title: 'Stack',
     ),
+    PagePosi(title: 'Positioned',),
     IndexStack(title: 'IndexedStack'),
     Aspect(
       title: 'AspectRatio',
@@ -95,8 +102,12 @@ class CompleteExerciceState extends State<CompleteExercice> {
     PageSiz(title: 'SizeBox',),
     PageFit(title: 'FittedBox',),
     PageStream(title: 'StreamBuilder',),
+    PageSapce(title: 'Spacer'),
+    PageOpa(title: 'Opacity',),
+    PageExp(title: 'Expanded',),
   ];
   List<String> myWidgetList = [
+    'Align',
     'AnimatedBuilder',
     'AnimatedIcon',
     'AnimatedList',
@@ -106,6 +117,7 @@ class CompleteExerciceState extends State<CompleteExercice> {
     'AnimatedSwitcher',
     'AnimatedContainer',
     'Stack',
+    'Positioned',
     'IndexedStack',
     'AspectRatio',
     'PageView',
@@ -129,6 +141,9 @@ class CompleteExerciceState extends State<CompleteExercice> {
     'SizeBox',
     'FittedBox',
     'StreamBuilder',
+    'Spacer',
+    'Opacity',
+    'Expanded',
   ];
   List<String> myClasses = [
     'home',
@@ -139,11 +154,11 @@ class CompleteExerciceState extends State<CompleteExercice> {
     return Scaffold(
       appBar: AppBar(
         elevation: 0,
-        title: Text('Exercice complet'),
+        title: Text('Exercice complet', style: TextStyle( fontSize: 20),),
         centerTitle: true,
         backgroundColor: Colors.grey,
         leading: Container(
-            padding: EdgeInsets.only(top: 10, bottom: 10, right: 20, left: 10),
+            padding: EdgeInsets.only(top: 10, bottom: 10, left: 20),
             height: 5,
             child: GestureDetector(
               onTap: launchUrl3,

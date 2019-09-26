@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:transparent_image/transparent_image.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class PageFadI extends StatefulWidget {
   final String title;
@@ -16,6 +17,14 @@ final String url ='https://venturebeat.com/wp-content/uploads/2019/05/flutter-mo
       appBar: AppBar(
         title: Text(widget.title),
         centerTitle: true,
+         actions: <Widget>[
+          IconButton(
+            icon: Icon(Icons.share),
+            onPressed: () {
+              launchUrl();
+            },
+          )
+        ],
       ),
       body:  
           //   CircularProgressIndicator(
@@ -32,6 +41,9 @@ final String url ='https://venturebeat.com/wp-content/uploads/2019/05/flutter-mo
           ),
         ), 
     );
-
+ 
   }
+   void launchUrl(){
+  launch('https://github.com/ravivi/exercice/blob/master/lib/fadeI.dart');
+}
 }

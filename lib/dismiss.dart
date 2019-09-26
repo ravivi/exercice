@@ -45,7 +45,9 @@ PageDismis({Key key, this.title}): super(key:key);
          actions: <Widget>[
           IconButton(
             icon: Icon(Icons.share),
-            onPressed: (){},
+            onPressed: (){
+              launchUrl();
+            },
           )
         ],
       ),
@@ -92,8 +94,9 @@ PageDismis({Key key, this.title}): super(key:key);
       ),
     );
  
-      void launchUrl(){
-  launch('https://github.com/ravivi/exercice/blob/master/lib/animationListe.dart');
-}
+ 
   }
+       void launchUrl(){
+  launch('https://github.com/ravivi/exercice/blob/master/lib/dismiss.dart');
+}
     }

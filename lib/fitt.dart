@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class PageFit extends StatefulWidget {
   final String title;
@@ -16,6 +17,14 @@ class _PageFitState extends State<PageFit> {
         appBar: AppBar(
           title: Text(widget.title),
           centerTitle: true,
+           actions: <Widget>[
+          IconButton(
+            icon: Icon(Icons.share),
+            onPressed: () {
+              launchUrl();
+            },
+          )
+        ],
         ),
         body: Center(child:Container(
           height: 200,
@@ -55,4 +64,7 @@ class _PageFitState extends State<PageFit> {
     });
 
   }
+    void launchUrl(){
+  launch('https://github.com/ravivi/exercice/blob/master/lib/fitt.dart');
+}
 }
